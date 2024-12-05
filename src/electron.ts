@@ -6,7 +6,7 @@ const WindowConfigMap = new Map<Electron.IpcMainEvent['processId'], ElectronDrag
 
 const getWindowByProcessId = (processId: Electron.IpcMainEvent['processId']) => BrowserWindow.getAllWindows().find(win => win.webContents.getProcessId() === processId)
 
-export const onWindowDrag = () => {
+export const onWindowDrag = (data: ElectronDragWindow.WindowConfigMapParams) => {
   ipcMain.on(
     ElectronDragWindow.IpcKey.ELECTRON_DRAG_WINDOW,
     function (e) {
@@ -33,15 +33,19 @@ export const onWindowDrag = () => {
       const [oldX, oldY] = win.getPosition()
 
       if ([x, oldX].includes(nextX) && [y, oldY].includes(nextY)) return
-
-      win.setPosition(nextX, nextY)
+      win.setBounds({
+          x: nextX,
+          y: nextY,
+          width: data.width,
+          height: data.height
+      })
 
       /**
        * reset window size, reason by https://github.com/electron/electron/issues/10862
        */
-      const { width, height } = config
+      //const { width, height } = config
 
-      win.setSize(width, height)
+      //win.setSize(width, height)
     }
   )
 
