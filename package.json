@@ -1,9 +1,9 @@
 {
-  "name": "electron-drag-window",
-  "author": "TyphonEX",
-  "version": "1.0.3",
+  "name": "electron-drag-window-update",
+  "author": "dingpanbao",
+  "version": "1.0.4",
   "type": "module",
-  "repository": "https://github.com/TyphonEX/electron-drag-window",
+  "repository": "https://github.com/dingpanbao/electron-drag-window-update.git",
   "license": "MIT",
   "files": [
     "dist"
@@ -38,13 +38,7 @@
   "scripts": {
     "build": "tsc && vite build"
   },
-  "keywords": [
-    "electron",
-    "drag",
-    "window",
-    "typescript",
-    "-webkit-app-region"
-  ],
+  "keywords": [],
   "devDependencies": {
     "@types/node": "^20.4.5",
     "typescript": "^5.0.2",
