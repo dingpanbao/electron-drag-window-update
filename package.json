@@ -1,7 +1,7 @@
 {
   "name": "electron-drag-window-update",
   "author": "dingpanbao",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "repository": "https://github.com/dingpanbao/electron-drag-window-update.git",
   "license": "MIT",
